@@ -8,23 +8,70 @@
 
 import UIKit
 
+protocol FullImageViewDisplayLogic: class {
+    func displayImage(viewModel: FullImageView.GetImage.ViewModel)
+}
+
 class FullImageViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    var imageToDisplay: String?
+    
+    var interactor: FullImageBusinessLogic?
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
     }
-    */
+    
+    private func setup() {
+        let viewController = self
+        let interactor = FullImageViewInteractor()
+        let presenter = FullImageViewPresenter()
+        viewController.interactor = interactor
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        scrollView.delegate = self
 
+        if let image = imageToDisplay {
+            imageView.loadImage(from: image)
+            imageView.sizeToFit()
+            scrollView.contentSize = imageView.frame.size
+            scrollView.addSubview(imageView)
+        }
+        scrollView.minimumZoomScale = 1.0
+        scrollView.maximumZoomScale = 10.0
+        view.addSubview(scrollView)
+    }
+    
+    func getImages(id: String) {
+        //let request = FullImageView.GetImage.Request(id: id)
+        //interactor?.getImage(request: request)
+    }
+}
+
+extension FullImageViewController: FullImageViewDisplayLogic {
+    
+    func displayImage(viewModel: FullImageView.GetImage.ViewModel) {
+        imageView.loadImage(from: viewModel.url)
+    }
+}
+
+extension FullImageViewController: UIScrollViewDelegate {
+
+    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+        return imageView
+    }
 }

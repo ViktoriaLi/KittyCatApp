@@ -76,26 +76,18 @@ extension GalleryViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-            /*let storyboard = UIStoryboard(name: "BookDetails", bundle: nil)
-            let controller = storyboard.instantiateViewController(withIdentifier: "bookDetailsID") as? BookDetailsViewController
-            if let controller = controller {
-                controller.takeBookButtonStatus = .booking
-                if let cell = booksCollectionView.cellForItem(at: indexPath) as? FoundBookCollectionViewCell, let bookId = cell.bookID {
-                    controller.bookID = String(bookId)
-                    //collectionView.cellForItem(at: indexPath)?.isUserInteractionEnabled = false
-                    controller.selectedCell = indexPath.row
-                    controller.searchPage = self
-                    navigationController?.pushViewController(controller, animated: true)
-                }
-            }*/
-        
+        let storyboard = UIStoryboard(name: "FullImage", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "fullImageId") as? FullImageViewController
+        if let vc = controller, indexPath.row < imagesUrls.count {
+            vc.imageToDisplay = imagesUrls[indexPath.row].url
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
 
 extension GalleryViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        //return CGSize(width: view.bounds.width / 2 - collectionView.contentInset.left * 2 - collectionView.contentInset.right * 2, height: 150)
         return CGSize(width: (view.safeAreaLayoutGuide.layoutFrame.width / 2 - 20) , height: 150)
     }
     
