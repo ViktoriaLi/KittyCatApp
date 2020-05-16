@@ -26,6 +26,12 @@
 		C1240A2C2470109B00403416 /* BreedDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1240A2B2470109B00403416 /* BreedDetailInteractor.swift */; };
 		C1240A2E247010A600403416 /* BreedDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1240A2D247010A600403416 /* BreedDetailPresenter.swift */; };
 		C1240A30247010B300403416 /* BreedDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1240A2F247010B300403416 /* BreedDetailViewModel.swift */; };
+		C1240A332470176F00403416 /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1240A312470176E00403416 /* GalleryCollectionViewCell.swift */; };
+		C1240A3624701B2100403416 /* GalleryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1240A3524701B2100403416 /* GalleryInteractor.swift */; };
+		C1240A3824701B2C00403416 /* GalleryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1240A3724701B2C00403416 /* GalleryPresenter.swift */; };
+		C1240A3A24701B3600403416 /* GalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1240A3924701B3600403416 /* GalleryViewModel.swift */; };
+		C1240A3D24701F7100403416 /* FullImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1240A3C24701F7100403416 /* FullImage.storyboard */; };
+		C1240A3F24701F9100403416 /* FullImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1240A3E24701F9100403416 /* FullImageViewController.swift */; };
 		C1C47097246FB3CC001B8050 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C47096246FB3CC001B8050 /* AppDelegate.swift */; };
 		C1C47099246FB3CC001B8050 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C47098246FB3CC001B8050 /* SceneDelegate.swift */; };
 		C1C4709B246FB3CC001B8050 /* BreedsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C4709A246FB3CC001B8050 /* BreedsListViewController.swift */; };
@@ -54,6 +60,12 @@
 		C1240A2B2470109B00403416 /* BreedDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetailInteractor.swift; sourceTree = "<group>"; };
 		C1240A2D247010A600403416 /* BreedDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetailPresenter.swift; sourceTree = "<group>"; };
 		C1240A2F247010B300403416 /* BreedDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetailViewModel.swift; sourceTree = "<group>"; };
+		C1240A312470176E00403416 /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
+		C1240A3524701B2100403416 /* GalleryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryInteractor.swift; sourceTree = "<group>"; };
+		C1240A3724701B2C00403416 /* GalleryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPresenter.swift; sourceTree = "<group>"; };
+		C1240A3924701B3600403416 /* GalleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewModel.swift; sourceTree = "<group>"; };
+		C1240A3C24701F7100403416 /* FullImage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FullImage.storyboard; sourceTree = "<group>"; };
+		C1240A3E24701F9100403416 /* FullImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullImageViewController.swift; sourceTree = "<group>"; };
 		C1C47093246FB3CC001B8050 /* KittyCat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KittyCat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1C47096246FB3CC001B8050 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1C47098246FB3CC001B8050 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +106,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		C1240A3B24701F5B00403416 /* FullImage */ = {
+			isa = PBXGroup;
+			children = (
+				C1240A3C24701F7100403416 /* FullImage.storyboard */,
+				C1240A3E24701F9100403416 /* FullImageViewController.swift */,
+			);
+			path = FullImage;
+			sourceTree = "<group>";
+		};
 		C1C4708A246FB3CB001B8050 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +134,7 @@
 		C1C47095246FB3CC001B8050 /* KittyCat */ = {
 			isa = PBXGroup;
 			children = (
+				C1240A3B24701F5B00403416 /* FullImage */,
 				C1240A24246FC4CC00403416 /* Extensions */,
 				C1240A1D246FBBA800403416 /* Model */,
 				C1240A16246FB7D600403416 /* Main.storyboard */,
@@ -154,8 +176,12 @@
 		C1C470AE246FB48D001B8050 /* Gallery */ = {
 			isa = PBXGroup;
 			children = (
-				C1240A0F246FB5FB00403416 /* Gallery.storyboard */,
+				C1240A3524701B2100403416 /* GalleryInteractor.swift */,
+				C1240A3724701B2C00403416 /* GalleryPresenter.swift */,
 				C1240A11246FB62700403416 /* GalleryViewController.swift */,
+				C1240A3924701B3600403416 /* GalleryViewModel.swift */,
+				C1240A0F246FB5FB00403416 /* Gallery.storyboard */,
+				C1240A312470176E00403416 /* GalleryCollectionViewCell.swift */,
 			);
 			path = Gallery;
 			sourceTree = "<group>";
@@ -231,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1C470A5246FB3D6001B8050 /* LaunchScreen.storyboard in Resources */,
+				C1240A3D24701F7100403416 /* FullImage.storyboard in Resources */,
 				C1240A10246FB5FB00403416 /* Gallery.storyboard in Resources */,
 				C1C470A2246FB3D6001B8050 /* Assets.xcassets in Resources */,
 				C1240A18246FB7D600403416 /* Main.storyboard in Resources */,
@@ -254,6 +281,8 @@
 				C1240A21246FBC4F00403416 /* ShortBreedModel.swift in Sources */,
 				C1C4709B246FB3CC001B8050 /* BreedsListViewController.swift in Sources */,
 				C1240A30247010B300403416 /* BreedDetailViewModel.swift in Sources */,
+				C1240A3A24701B3600403416 /* GalleryViewModel.swift in Sources */,
+				C1240A3824701B2C00403416 /* GalleryPresenter.swift in Sources */,
 				C1240A2C2470109B00403416 /* BreedDetailInteractor.swift in Sources */,
 				C1240A23246FC10800403416 /* ApiResponse.swift in Sources */,
 				C1C47097246FB3CC001B8050 /* AppDelegate.swift in Sources */,
@@ -261,8 +290,11 @@
 				C1240A0A246FB50700403416 /* BreedsListViewModel.swift in Sources */,
 				C1240A2A246FCD1600403416 /* BreedDetailViewController.swift in Sources */,
 				C1240A1C246FBB8E00403416 /* ShortImageModel.swift in Sources */,
+				C1240A3F24701F9100403416 /* FullImageViewController.swift in Sources */,
 				C1240A12246FB62700403416 /* GalleryViewController.swift in Sources */,
+				C1240A332470176F00403416 /* GalleryCollectionViewCell.swift in Sources */,
 				C1C47099246FB3CC001B8050 /* SceneDelegate.swift in Sources */,
+				C1240A3624701B2100403416 /* GalleryInteractor.swift in Sources */,
 				C1240A08246FB4F600403416 /* BreedsListPresenter.swift in Sources */,
 				C1240A2E247010A600403416 /* BreedDetailPresenter.swift in Sources */,
 			);

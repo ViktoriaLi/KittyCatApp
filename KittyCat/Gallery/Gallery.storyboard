@@ -16,19 +16,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dZj-F7-vqP">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="173" height="138"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Sgl-AJ-xhY">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="Sgl-AJ-xhY" customClass="GalleryCollectionViewCell" customModule="KittyCat" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="173" height="138"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="9At-B5-qBh">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="173" height="138"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mno-Hc-DG1">
+                                            <rect key="frame" x="0.0" y="0.0" width="173" height="138"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Mno-Hc-DG1" firstAttribute="height" secondItem="9At-B5-qBh" secondAttribute="height" id="R4L-bC-yyB"/>
+                                        <constraint firstAttribute="trailing" secondItem="Mno-Hc-DG1" secondAttribute="trailing" id="Vw4-ji-9UO"/>
+                                        <constraint firstItem="Mno-Hc-DG1" firstAttribute="top" secondItem="9At-B5-qBh" secondAttribute="top" id="hNx-aC-63E"/>
+                                        <constraint firstItem="Mno-Hc-DG1" firstAttribute="leading" secondItem="9At-B5-qBh" secondAttribute="leading" id="mpx-zq-dmv"/>
+                                        <constraint firstAttribute="bottom" secondItem="Mno-Hc-DG1" secondAttribute="bottom" id="qLx-lA-QX1"/>
+                                        <constraint firstItem="Mno-Hc-DG1" firstAttribute="width" secondItem="9At-B5-qBh" secondAttribute="width" id="r4m-te-kG0"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
+                                <size key="customSize" width="173" height="138"/>
+                                <connections>
+                                    <outlet property="catImageView" destination="Mno-Hc-DG1" id="crt-Jx-VMX"/>
+                                    <outlet property="contentView" destination="9At-B5-qBh" id="3DX-Jb-lQc"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
