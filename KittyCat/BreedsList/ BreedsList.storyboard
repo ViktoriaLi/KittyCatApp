@@ -30,7 +30,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Breeds" image="first" id="4ed-on-2JN"/>
-                    <navigationItem key="navigationItem" id="p3q-Na-2Yz"/>
+                    <navigationItem key="navigationItem" title="Breeds" id="p3q-Na-2Yz"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xp7-im-vU1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

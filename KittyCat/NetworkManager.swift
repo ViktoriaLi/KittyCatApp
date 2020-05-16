@@ -75,8 +75,8 @@ class NetworkManager {
     
     func getBreedImageById(breedId: String, completion: @escaping ([ShortImageModel]?, Error?) -> Void) {
     
-    let baseUrl = "https://api.thecatapi.com/v1/images/search?breed_ids="
-    guard let url = URL(string: baseUrl + breedId) else { return }
+    let baseUrl = "https://api.thecatapi.com/v1/images/search?breed_ids=\(breedId)&limit=1"
+    guard let url = URL(string: baseUrl) else { return }
     
     var request = URLRequest(url: url)
     request.httpMethod = "GET"

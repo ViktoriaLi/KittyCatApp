@@ -21,6 +21,11 @@
 		C1240A21246FBC4F00403416 /* ShortBreedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1240A20246FBC4F00403416 /* ShortBreedModel.swift */; };
 		C1240A23246FC10800403416 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1240A22246FC10800403416 /* ApiResponse.swift */; };
 		C1240A26246FC7AD00403416 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1240A25246FC7AD00403416 /* UIImageView.swift */; };
+		C1240A28246FCC0600403416 /* BreedDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1240A27246FCC0600403416 /* BreedDetail.storyboard */; };
+		C1240A2A246FCD1600403416 /* BreedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1240A29246FCD1600403416 /* BreedDetailViewController.swift */; };
+		C1240A2C2470109B00403416 /* BreedDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1240A2B2470109B00403416 /* BreedDetailInteractor.swift */; };
+		C1240A2E247010A600403416 /* BreedDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1240A2D247010A600403416 /* BreedDetailPresenter.swift */; };
+		C1240A30247010B300403416 /* BreedDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1240A2F247010B300403416 /* BreedDetailViewModel.swift */; };
 		C1C47097246FB3CC001B8050 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C47096246FB3CC001B8050 /* AppDelegate.swift */; };
 		C1C47099246FB3CC001B8050 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C47098246FB3CC001B8050 /* SceneDelegate.swift */; };
 		C1C4709B246FB3CC001B8050 /* BreedsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C4709A246FB3CC001B8050 /* BreedsListViewController.swift */; };
@@ -44,6 +49,11 @@
 		C1240A20246FBC4F00403416 /* ShortBreedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortBreedModel.swift; sourceTree = "<group>"; };
 		C1240A22246FC10800403416 /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
 		C1240A25246FC7AD00403416 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		C1240A27246FCC0600403416 /* BreedDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BreedDetail.storyboard; sourceTree = "<group>"; };
+		C1240A29246FCD1600403416 /* BreedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetailViewController.swift; sourceTree = "<group>"; };
+		C1240A2B2470109B00403416 /* BreedDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetailInteractor.swift; sourceTree = "<group>"; };
+		C1240A2D247010A600403416 /* BreedDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetailPresenter.swift; sourceTree = "<group>"; };
+		C1240A2F247010B300403416 /* BreedDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetailViewModel.swift; sourceTree = "<group>"; };
 		C1C47093246FB3CC001B8050 /* KittyCat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KittyCat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1C47096246FB3CC001B8050 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1C47098246FB3CC001B8050 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -153,6 +163,11 @@
 		C1C470AF246FB497001B8050 /* BreedDetail */ = {
 			isa = PBXGroup;
 			children = (
+				C1240A2B2470109B00403416 /* BreedDetailInteractor.swift */,
+				C1240A2D247010A600403416 /* BreedDetailPresenter.swift */,
+				C1240A29246FCD1600403416 /* BreedDetailViewController.swift */,
+				C1240A2F247010B300403416 /* BreedDetailViewModel.swift */,
+				C1240A27246FCC0600403416 /* BreedDetail.storyboard */,
 			);
 			path = BreedDetail;
 			sourceTree = "<group>";
@@ -221,6 +236,7 @@
 				C1240A18246FB7D600403416 /* Main.storyboard in Resources */,
 				C1240A0E246FB5DB00403416 /* Quiz.storyboard in Resources */,
 				C1240A0C246FB54100403416 /*  BreedsList.storyboard in Resources */,
+				C1240A28246FCC0600403416 /* BreedDetail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,14 +253,18 @@
 				C1240A1F246FBBB700403416 /* BreedModel.swift in Sources */,
 				C1240A21246FBC4F00403416 /* ShortBreedModel.swift in Sources */,
 				C1C4709B246FB3CC001B8050 /* BreedsListViewController.swift in Sources */,
+				C1240A30247010B300403416 /* BreedDetailViewModel.swift in Sources */,
+				C1240A2C2470109B00403416 /* BreedDetailInteractor.swift in Sources */,
 				C1240A23246FC10800403416 /* ApiResponse.swift in Sources */,
 				C1C47097246FB3CC001B8050 /* AppDelegate.swift in Sources */,
 				C1240A06246FB4E800403416 /* BreedsListInteractor.swift in Sources */,
 				C1240A0A246FB50700403416 /* BreedsListViewModel.swift in Sources */,
+				C1240A2A246FCD1600403416 /* BreedDetailViewController.swift in Sources */,
 				C1240A1C246FBB8E00403416 /* ShortImageModel.swift in Sources */,
 				C1240A12246FB62700403416 /* GalleryViewController.swift in Sources */,
 				C1C47099246FB3CC001B8050 /* SceneDelegate.swift in Sources */,
 				C1240A08246FB4F600403416 /* BreedsListPresenter.swift in Sources */,
+				C1240A2E247010A600403416 /* BreedDetailPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

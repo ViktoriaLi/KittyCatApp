@@ -37,7 +37,7 @@
                         </connections>
                     </collectionView>
                     <tabBarItem key="tabBarItem" title="Gallery" image="first" id="gzX-1Q-BKe"/>
-                    <navigationItem key="navigationItem" id="jgj-aK-ENF"/>
+                    <navigationItem key="navigationItem" title="Gallery" id="jgj-aK-ENF"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BeD-df-Bly" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

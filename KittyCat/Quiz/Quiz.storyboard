@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Quiz1-->
+        <!--Quiz-->
         <scene sceneID="K2V-FX-KxJ">
             <objects>
                 <viewController id="b7v-Z3-fYN" customClass="QuizViewController" customModule="KittyCat" customModuleProvider="target" sceneMemberID="viewController">
@@ -37,7 +37,7 @@
                         <viewLayoutGuide key="safeArea" id="YUV-t4-xeB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Quiz1" image="second" id="KMN-kP-tW0"/>
-                    <navigationItem key="navigationItem" id="lD1-i7-SZg"/>
+                    <navigationItem key="navigationItem" title="Quiz" id="lD1-i7-SZg"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EUn-4Y-1wg" sceneMemberID="firstResponder"/>

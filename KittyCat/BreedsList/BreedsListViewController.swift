@@ -15,7 +15,7 @@ protocol BreedsListViewDisplayLogic: class {
 
 class BreedsListViewController: UITableViewController {
 
-    var breeds = [ShortBreedModel]()
+    var breeds = [BreedModel]()
     var interactor: BreedsListBusinessLogic?
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -64,7 +64,12 @@ extension BreedsListViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let storyboard = UIStoryboard(name: "BreedDetail", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "breedDetailID") as? BreedDetailViewController
+        if let vc = controller, indexPath.row < breeds.count {
+            vc.breedToDisplay = breeds[indexPath.row]
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
 

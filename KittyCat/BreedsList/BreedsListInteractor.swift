@@ -21,7 +21,7 @@ final class BreedsListViewInteractor: BreedsListBusinessLogic, BreedsListViewDat
     
     func getBreeds(request: BreedsListView.GetBreeds.Request) {
         
-        networkManager.getShortBreeds(completion: { (breeds, error) in
+        networkManager.getBreedsWithInfo(completion: { (breeds, error) in
             if let allBreeds = breeds {
                 let response = BreedsListView.GetBreeds.Response(breeds: allBreeds)
                 self.presenter?.processingBreeds(response: response)

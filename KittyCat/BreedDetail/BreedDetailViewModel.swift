@@ -1,5 +1,5 @@
 //
-//  BreedsListViewModel.swift
+//  BreedDetailViewModel.swift
 //  KittyCat
 //
 //  Created by Mac Developer on 16.05.2020.
@@ -8,19 +8,20 @@
 
 import Foundation
 
-enum BreedsListView {
+enum BreedDetailView {
     
-    enum GetBreeds {
+    enum GetImage {
         
         struct Request {
+            var breedId: String
         }
         
         struct Response {
-            let breeds: [BreedModel]
+            let imageUrl: String
         }
         
         struct ViewModel {
-            let breeds: [BreedModel]
+            let imageUrl: String
         }
     }
     
