@@ -35,6 +35,12 @@
 		C1240A41247027CE00403416 /* FullImageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1240A40247027CE00403416 /* FullImageInteractor.swift */; };
 		C1240A43247027DB00403416 /* FullImagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1240A42247027DB00403416 /* FullImagePresenter.swift */; };
 		C1240A452470280C00403416 /* FullImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1240A442470280C00403416 /* FullImageViewModel.swift */; };
+		C1240A47247051E300403416 /* QuizInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1240A46247051E300403416 /* QuizInteractor.swift */; };
+		C1240A49247051F100403416 /* QuizPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1240A48247051F100403416 /* QuizPresenter.swift */; };
+		C1240A4B247051FE00403416 /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1240A4A247051FE00403416 /* QuizViewModel.swift */; };
+		C1240A4D24725BA700403416 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1240A4C24725BA600403416 /* Question.swift */; };
+		C1240A4F2472621800403416 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1240A4E2472621800403416 /* QuestionView.swift */; };
+		C1240A512472622700403416 /* QuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1240A502472622700403416 /* QuestionView.xib */; };
 		C1C47097246FB3CC001B8050 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C47096246FB3CC001B8050 /* AppDelegate.swift */; };
 		C1C47099246FB3CC001B8050 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C47098246FB3CC001B8050 /* SceneDelegate.swift */; };
 		C1C4709B246FB3CC001B8050 /* BreedsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C4709A246FB3CC001B8050 /* BreedsListViewController.swift */; };
@@ -72,6 +78,12 @@
 		C1240A40247027CE00403416 /* FullImageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullImageInteractor.swift; sourceTree = "<group>"; };
 		C1240A42247027DB00403416 /* FullImagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullImagePresenter.swift; sourceTree = "<group>"; };
 		C1240A442470280C00403416 /* FullImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullImageViewModel.swift; sourceTree = "<group>"; };
+		C1240A46247051E300403416 /* QuizInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizInteractor.swift; sourceTree = "<group>"; };
+		C1240A48247051F100403416 /* QuizPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPresenter.swift; sourceTree = "<group>"; };
+		C1240A4A247051FE00403416 /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
+		C1240A4C24725BA600403416 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		C1240A4E2472621800403416 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
+		C1240A502472622700403416 /* QuestionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionView.xib; sourceTree = "<group>"; };
 		C1C47093246FB3CC001B8050 /* KittyCat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KittyCat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1C47096246FB3CC001B8050 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1C47098246FB3CC001B8050 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +112,7 @@
 				C1240A1B246FBB8E00403416 /* ShortImageModel.swift */,
 				C1240A20246FBC4F00403416 /* ShortBreedModel.swift */,
 				C1240A22246FC10800403416 /* ApiResponse.swift */,
+				C1240A4C24725BA600403416 /* Question.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -176,8 +189,13 @@
 		C1C470AD246FB483001B8050 /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
+				C1240A46247051E300403416 /* QuizInteractor.swift */,
+				C1240A48247051F100403416 /* QuizPresenter.swift */,
 				C1C4709C246FB3CC001B8050 /* QuizViewController.swift */,
+				C1240A4A247051FE00403416 /* QuizViewModel.swift */,
 				C1240A0D246FB5DB00403416 /* Quiz.storyboard */,
+				C1240A4E2472621800403416 /* QuestionView.swift */,
+				C1240A502472622700403416 /* QuestionView.xib */,
 			);
 			path = Quiz;
 			sourceTree = "<group>";
@@ -270,6 +288,7 @@
 				C1240A10246FB5FB00403416 /* Gallery.storyboard in Resources */,
 				C1C470A2246FB3D6001B8050 /* Assets.xcassets in Resources */,
 				C1240A18246FB7D600403416 /* Main.storyboard in Resources */,
+				C1240A512472622700403416 /* QuestionView.xib in Resources */,
 				C1240A0E246FB5DB00403416 /* Quiz.storyboard in Resources */,
 				C1240A0C246FB54100403416 /*  BreedsList.storyboard in Resources */,
 				C1240A28246FCC0600403416 /* BreedDetail.storyboard in Resources */,
@@ -284,17 +303,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1240A1A246FB7FD00403416 /* NetworkManager.swift in Sources */,
+				C1240A47247051E300403416 /* QuizInteractor.swift in Sources */,
 				C1C4709D246FB3CC001B8050 /* QuizViewController.swift in Sources */,
+				C1240A4F2472621800403416 /* QuestionView.swift in Sources */,
 				C1240A26246FC7AD00403416 /* UIImageView.swift in Sources */,
 				C1240A1F246FBBB700403416 /* BreedModel.swift in Sources */,
 				C1240A21246FBC4F00403416 /* ShortBreedModel.swift in Sources */,
+				C1240A4B247051FE00403416 /* QuizViewModel.swift in Sources */,
 				C1C4709B246FB3CC001B8050 /* BreedsListViewController.swift in Sources */,
+				C1240A49247051F100403416 /* QuizPresenter.swift in Sources */,
 				C1240A30247010B300403416 /* BreedDetailViewModel.swift in Sources */,
 				C1240A3A24701B3600403416 /* GalleryViewModel.swift in Sources */,
 				C1240A43247027DB00403416 /* FullImagePresenter.swift in Sources */,
 				C1240A3824701B2C00403416 /* GalleryPresenter.swift in Sources */,
 				C1240A2C2470109B00403416 /* BreedDetailInteractor.swift in Sources */,
 				C1240A23246FC10800403416 /* ApiResponse.swift in Sources */,
+				C1240A4D24725BA700403416 /* Question.swift in Sources */,
 				C1C47097246FB3CC001B8050 /* AppDelegate.swift in Sources */,
 				C1240A06246FB4E800403416 /* BreedsListInteractor.swift in Sources */,
 				C1240A41247027CE00403416 /* FullImageInteractor.swift in Sources */,

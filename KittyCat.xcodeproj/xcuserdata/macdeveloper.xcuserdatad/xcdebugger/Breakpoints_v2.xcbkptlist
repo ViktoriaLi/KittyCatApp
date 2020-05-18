@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "AA937DEA-FE10-47CF-9468-129F48E97F83"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KittyCat/BreedsList/BreedsListViewController.swift"
@@ -40,7 +40,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "63836A97-7F1D-4E53-BC87-0A2FB23AAEFA"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KittyCat/BreedsList/BreedsListInteractor.swift"
@@ -53,7 +53,7 @@
             <Locations>
                <Location
                   uuid = "63836A97-7F1D-4E53-BC87-0A2FB23AAEFA - ed3f14d9abce062"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "KittyCat.BreedsListViewInteractor.getBreeds(request: KittyCat.BreedsListView.GetBreeds.Request) -&gt; ()"
@@ -67,11 +67,11 @@
                   offsetFromSymbolStart = "22">
                </Location>
                <Location
-                  uuid = "63836A97-7F1D-4E53-BC87-0A2FB23AAEFA - f4940633b5d33bd0"
-                  shouldBeEnabled = "Yes"
+                  uuid = "63836A97-7F1D-4E53-BC87-0A2FB23AAEFA - e54a7dc2bcf4bc8b"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;KittyCat.ShortBreedModel&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in KittyCat.BreedsListViewInteractor.getBreeds(request: KittyCat.BreedsListView.GetBreeds.Request) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;KittyCat.BreedModel&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in KittyCat.BreedsListViewInteractor.getBreeds(request: KittyCat.BreedsListView.GetBreeds.Request) -&gt; ()"
                   moduleName = "KittyCat"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macdeveloper/Documents/Vika/KittyCat/KittyCat/BreedsList/BreedsListInteractor.swift"
@@ -88,7 +88,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "7807A644-D27C-4904-A7B3-46E0BBD1D193"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KittyCat/BreedsList/BreedsListInteractor.swift"
@@ -104,7 +104,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "41060DA2-B3F1-4589-8075-508BC2EE8C66"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KittyCat/BreedsList/BreedsListInteractor.swift"
@@ -120,7 +120,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "9B540D84-2801-414C-B20C-4121F429C1BF"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KittyCat/BreedsList/BreedsListViewController.swift"
@@ -129,6 +129,86 @@
             startingLineNumber = "43"
             endingLineNumber = "43"
             landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "42AD1AD8-619F-4B03-B020-A31876DD1410"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KittyCat/Quiz/QuestionView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "optionButtonTapped(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BC188C7B-5F7B-4669-9588-E4A10A67D678"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KittyCat/Quiz/QuestionView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "optionButtonTapped(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "754E711D-B1A0-4D85-8602-8AB15AB3641B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KittyCat/Quiz/QuizViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "displayImage(viewModel:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F882F299-C152-430D-9825-79F9F249827E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KittyCat/Quiz/QuizViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "displayNextQuestion(ifCorrect:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1240F60A-2AE1-43BA-8A31-65A177D407BF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KittyCat/Quiz/QuizViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "displayImage(viewModel:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
