@@ -49,8 +49,8 @@ class BreedDetailViewController: UIViewController {
         if let breed = breedToDisplay {
             self.navigationItem.title = breed.name
             getImageUrl(breedId: breed.id)
-            temperamentLabel.text = breed.temperament
-            originLabel.text = breed.origin
+            temperamentLabel.text = "Temperament: \(breed.temperament)"
+            originLabel.text = "Origin: \(breed.origin)"
             if breed.hypoallergenic == 1 {
                 hypoallergenicLabel.text = "HypoallergenicLabel: Yes"
             } else {

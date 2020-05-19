@@ -18,18 +18,29 @@ final class GalleryViewInteractor: GalleryBusinessLogic, GalleryViewDataStore {
     
     var presenter: GalleryViewPresentationLogic?
     private var networkManager = NetworkManager()
+    private var cursor = 0
+    private let limit = 20
     
     func getImages(request: GalleryView.GetImages.Request) {
-        
-        networkManager.getImages(completion: { (images, error) in
-            if let breedImages = images, breedImages.count > 0 {
-                let response = GalleryView.GetImages.Response(imageUrls: breedImages)
-                self.presenter?.processingImages(response: response)
-            } else if error != nil {
-                let response = GalleryView.GetErrorView.Response(error: .apiError)
-                self.presenter?.processingError(response: response)
-            }
-        })
+        if request.ifFirstSearch == true {
+            cursor = 0
+        }
+        if request.ifFirstSearch == true || cursor != 0 {
+            networkManager.getImages(limit: limit, cursor: cursor, completion: { (images, error) in
+                if let breedImages = images, breedImages.count > 0 {
+                    if breedImages.count == 0 {
+                        self.cursor = 0
+                    } else {
+                        self.cursor += 1
+                    }
+                    let response = GalleryView.GetImages.Response(imageUrls: breedImages)
+                    self.presenter?.processingImages(response: response)
+                } else if error != nil {
+                    self.cursor = 0
+                    let response = GalleryView.GetErrorView.Response(error: .apiError)
+                    self.presenter?.processingError(response: response)
+                }
+            })
+        }
     }
-    
 }

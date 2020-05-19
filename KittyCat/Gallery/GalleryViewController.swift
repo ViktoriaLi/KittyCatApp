@@ -61,9 +61,9 @@ extension GalleryViewController {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as? GalleryCollectionViewCell else {
                 return GalleryCollectionViewCell()
             }
-        /*if indexPath.row == imagesUrls.count - 1 {
+        if indexPath.row == imagesUrls.count - 2 {
             getImages(ifFirstSearch: false)
-        }*/
+        }
         //if imagesUrls.count > indexPath.row {
             let image = imagesUrls[indexPath.row]
             cell.configure(cat: image)
