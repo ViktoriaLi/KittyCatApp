@@ -44,6 +44,11 @@ class QuestionView: UIView {
     private func loadFromNib() {
         Bundle.main.loadNibNamed("QuestionView", owner: self, options: nil)
         addSubview(contentView)
+        option1Button.layer.cornerRadius = 8
+        option2Button.layer.cornerRadius = 8
+        option3Button.layer.cornerRadius = 8
+        option4Button.layer.cornerRadius = 8
+        imageView.layer.cornerRadius = 8
         option1Button.setTitle(question?.options[0], for: .normal)
         option2Button.setTitle(question?.options[1], for: .normal)
         option3Button.setTitle(question?.options[2], for: .normal)

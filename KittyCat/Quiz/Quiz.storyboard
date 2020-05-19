@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Quiz-->
+        <!--Quiz: Guess the cat breed-->
         <scene sceneID="K2V-FX-KxJ">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EUn-4Y-1wg" sceneMemberID="firstResponder"/>
@@ -16,43 +16,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer #" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbI-gb-fIM">
-                                <rect key="frame" x="16" y="98" width="82.5" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbI-gb-fIM">
+                                <rect key="frame" x="16" y="104" width="79" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correctness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9K-KA-4wW">
-                                <rect key="frame" x="292" y="98" width="106" height="24"/>
+                                <rect key="frame" x="292" y="104" width="106" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fOc-NT-vpq" customClass="QuestionView" customModule="KittyCat" customModuleProvider="target">
-                                <rect key="frame" x="16" y="118" width="382" height="675"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n1O-LP-r5K">
+                                <rect key="frame" x="0.0" y="168" width="414" height="645"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="W9K-KA-4wW" firstAttribute="top" secondItem="YUV-t4-xeB" secondAttribute="top" constant="10" id="7JQ-7R-RYR"/>
-                            <constraint firstItem="sbI-gb-fIM" firstAttribute="top" secondItem="YUV-t4-xeB" secondAttribute="top" constant="10" id="83q-L9-VkC"/>
-                            <constraint firstItem="YUV-t4-xeB" firstAttribute="trailing" secondItem="fOc-NT-vpq" secondAttribute="trailing" constant="16" id="BfJ-ys-laI"/>
-                            <constraint firstItem="YUV-t4-xeB" firstAttribute="bottom" secondItem="fOc-NT-vpq" secondAttribute="bottom" constant="20" id="Cee-qw-6gL"/>
-                            <constraint firstItem="fOc-NT-vpq" firstAttribute="top" secondItem="YUV-t4-xeB" secondAttribute="top" constant="30" id="Dbe-yo-mf4"/>
-                            <constraint firstItem="sbI-gb-fIM" firstAttribute="leading" secondItem="YUV-t4-xeB" secondAttribute="leading" constant="16" id="S4g-jm-FUk"/>
-                            <constraint firstItem="W9K-KA-4wW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sbI-gb-fIM" secondAttribute="trailing" constant="10" id="Tdl-Fi-Sz0"/>
-                            <constraint firstItem="fOc-NT-vpq" firstAttribute="leading" secondItem="YUV-t4-xeB" secondAttribute="leading" constant="16" id="n8S-p0-HG7"/>
-                            <constraint firstItem="YUV-t4-xeB" firstAttribute="trailing" secondItem="W9K-KA-4wW" secondAttribute="trailing" constant="16" id="q3n-sI-oWI"/>
+                            <constraint firstItem="YUV-t4-xeB" firstAttribute="bottom" secondItem="n1O-LP-r5K" secondAttribute="bottom" id="46k-qR-jpD"/>
+                            <constraint firstItem="n1O-LP-r5K" firstAttribute="top" secondItem="sbI-gb-fIM" secondAttribute="bottom" constant="40" id="59L-Q1-sEO"/>
+                            <constraint firstItem="n1O-LP-r5K" firstAttribute="top" secondItem="W9K-KA-4wW" secondAttribute="bottom" constant="40" id="CS1-dZ-gxp"/>
+                            <constraint firstItem="sbI-gb-fIM" firstAttribute="leading" secondItem="YUV-t4-xeB" secondAttribute="leading" constant="16" id="DlJ-uT-ekB"/>
+                            <constraint firstItem="YUV-t4-xeB" firstAttribute="trailing" secondItem="n1O-LP-r5K" secondAttribute="trailing" id="IPE-5J-nNV"/>
+                            <constraint firstItem="YUV-t4-xeB" firstAttribute="trailing" secondItem="W9K-KA-4wW" secondAttribute="trailing" constant="16" id="RtY-I5-QZb"/>
+                            <constraint firstItem="W9K-KA-4wW" firstAttribute="top" secondItem="YUV-t4-xeB" secondAttribute="top" constant="16" id="aII-Mj-dhN"/>
+                            <constraint firstItem="sbI-gb-fIM" firstAttribute="top" secondItem="YUV-t4-xeB" secondAttribute="top" constant="16" id="gLq-Zp-o79"/>
+                            <constraint firstItem="n1O-LP-r5K" firstAttribute="leading" secondItem="YUV-t4-xeB" secondAttribute="leading" id="sEN-aN-Ngl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YUV-t4-xeB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Quiz" id="lD1-i7-SZg"/>
+                    <navigationItem key="navigationItem" title="Quiz: Guess the cat breed" id="lD1-i7-SZg"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="answerCounterLabel" destination="sbI-gb-fIM" id="ysr-dK-xUS"/>
                         <outlet property="correctnessLabel" destination="W9K-KA-4wW" id="DLv-oe-XUy"/>
-                        <outlet property="questionContainer" destination="fOc-NT-vpq" id="VaG-nk-igs"/>
+                        <outlet property="questionContainer" destination="n1O-LP-r5K" id="XG2-Z4-oxX"/>
                     </connections>
                 </viewController>
             </objects>

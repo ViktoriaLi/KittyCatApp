@@ -15,14 +15,14 @@ protocol QuizViewDisplayLogic: class {
 
 protocol QuestionDelegate {
     func displayNextQuestion(ifCorrect: Bool)
-    
 }
 
 class QuizViewController: UIViewController {
     
-    @IBOutlet weak var questionContainer: QuestionView!
+    @IBOutlet weak var questionContainer: UIView!
     @IBOutlet weak var answerCounterLabel: UILabel!
     @IBOutlet weak var correctnessLabel: UILabel!
+    @IBOutlet weak var contentView: UIView!
     
     var currentQuestion = 0
     var correctness = 0
@@ -62,17 +62,10 @@ class QuizViewController: UIViewController {
     }
     
     func setQuizLabels() {
-        answerCounterLabel.text = "\(currentQuestion + 1)/\(questions.count)"
-        correctnessLabel.text = "\(correctness)/\(questions.count)"
+        answerCounterLabel.text = "Question \(currentQuestion + 1)/\(questions.count)"
+        correctnessLabel.text = "Correctness is \(correctness)/\(questions.count)"
     }
-    /*func loadViewWithQuestion() {
-        let question = QuestionView(question: questions[currentQuestion], frame: CGRect(x: questionContainer.frame.minX, y: questionContainer.frame.minY, width: questionContainer.frame.width, height: questionContainer.frame.height))
-        for view in questionContainer.subviews {
-            view.removeFromSuperview()
-        }
-        questionContainer.addSubview(question)
-    }*/
-    
+
     func getImage() {
         if currentQuestion < questions.count {
             let request = QuizView.GetImage.Request(breedId: questions[currentQuestion].breedId)
@@ -90,14 +83,11 @@ extension QuizViewController: QuizViewDisplayLogic {
     }
 
     func displayImage(viewModel: QuizView.GetImage.ViewModel) {
-        let question = QuestionView(photo: viewModel.imageUrl, question: questions[currentQuestion], delegate: self, frame: CGRect(x: questionContainer.frame.minX, y: questionContainer.frame.minY, width: questionContainer.frame.width, height: questionContainer.frame.height))
+        let question = QuestionView(photo: viewModel.imageUrl, question: questions[currentQuestion], delegate: self, frame: CGRect(x: questionContainer.frame.minX, y: questionContainer.bounds.minY, width: questionContainer.frame.width, height: questionContainer.frame.height))
         for view in questionContainer.subviews {
             view.removeFromSuperview()
         }
         questionContainer.addSubview(question)
-        //questionContainer.imageView.loadImage(from: viewModel.imageUrl)
-        //loadViewWithQuestion()
-        //тут может быть несоответствие картинки и вопросу изза несинхронной загрухки
     }
     
     func resetQuize() {
@@ -107,8 +97,6 @@ extension QuizViewController: QuizViewDisplayLogic {
         setQuizLabels()
     }
 }
-
-//сделать окно результата и и сброс квиза
 
 extension QuizViewController: QuestionDelegate {
     func displayNextQuestion(ifCorrect: Bool) {

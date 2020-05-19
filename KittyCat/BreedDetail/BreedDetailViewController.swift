@@ -47,6 +47,7 @@ class BreedDetailViewController: UIViewController {
         super.viewDidLoad()
         
         if let breed = breedToDisplay {
+            self.navigationItem.title = breed.name
             getImageUrl(breedId: breed.id)
             temperamentLabel.text = breed.temperament
             originLabel.text = breed.origin
