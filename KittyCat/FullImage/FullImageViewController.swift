@@ -15,7 +15,7 @@ protocol FullImageViewDisplayLogic: class {
 class FullImageViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var scrollView: UIScrollView!
+    //@IBOutlet weak var scrollView: UIScrollView!
     
     var imageToDisplay: String?
     
@@ -43,17 +43,22 @@ class FullImageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        scrollView.delegate = self
+        //scrollView.delegate = self
 
         if let image = imageToDisplay {
             imageView.loadImage(from: image)
-            imageView.sizeToFit()
-            scrollView.contentSize = imageView.frame.size
-            scrollView.addSubview(imageView)
+            /*let widthScale = view.bounds.size.width / imageView.bounds.width
+            let heightScale = view.bounds.size.height / imageView.bounds.height
+            let scale = min(widthScale,heightScale)
+            scrollView.minimumZoomScale = scale
+            scrollView.contentSize = .init(width: 2000, height: 2000)*/
+            
         }
+
+        /*scrollView.addSubview(imageView)
         scrollView.minimumZoomScale = 1.0
         scrollView.maximumZoomScale = 10.0
-        view.addSubview(scrollView)
+        view.addSubview(scrollView)*/
     }
     
     func getImages(id: String) {
@@ -69,9 +74,3 @@ extension FullImageViewController: FullImageViewDisplayLogic {
     }
 }
 
-extension FullImageViewController: UIScrollViewDelegate {
-
-    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
-        return imageView
-    }
-}

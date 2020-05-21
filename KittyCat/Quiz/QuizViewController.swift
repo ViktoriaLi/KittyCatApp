@@ -11,6 +11,7 @@ import UIKit
 protocol QuizViewDisplayLogic: class {
     func fillQuestions(viewModel: QuizView.GetBreeds.ViewModel)
     func displayImage(viewModel: QuizView.GetImage.ViewModel)
+    func showErrorView(viewModel: QuizView.GetErrorView.ViewModel)
 }
 
 protocol QuestionDelegate {
@@ -52,8 +53,9 @@ class QuizViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        answerCounterLabel.isHidden = true
+        correctnessLabel.isHidden = true
         getBreeds()
-        
     }
 
     func getBreeds() {
@@ -82,12 +84,26 @@ extension QuizViewController: QuizViewDisplayLogic {
         getImage()
     }
 
+    func showErrorView(viewModel: QuizView.GetErrorView.ViewModel) {
+        DispatchQueue.main.async {
+            let errorView = SomethingWrongView(delegate: self, frame: CGRect(x: self.questionContainer.frame.minX, y: self.questionContainer.bounds.minY, width: self.questionContainer.frame.width, height: self.questionContainer.frame.height))
+            for view in self.questionContainer.subviews {
+                view.removeFromSuperview()
+            }
+            self.questionContainer.addSubview(errorView)
+            self.answerCounterLabel.isHidden = true
+            self.correctnessLabel.isHidden = true
+        }
+    }
+    
     func displayImage(viewModel: QuizView.GetImage.ViewModel) {
         let question = QuestionView(photo: viewModel.imageUrl, question: questions[currentQuestion], delegate: self, frame: CGRect(x: questionContainer.frame.minX, y: questionContainer.bounds.minY, width: questionContainer.frame.width, height: questionContainer.frame.height))
         for view in questionContainer.subviews {
             view.removeFromSuperview()
         }
         questionContainer.addSubview(question)
+        answerCounterLabel.isHidden = false
+        correctnessLabel.isHidden = false
     }
     
     func resetQuize() {
@@ -118,3 +134,9 @@ extension QuizViewController: QuestionDelegate {
     }
 }
 
+extension QuizViewController: ErrorViewDelegate {
+    
+    func tryAgain() {
+        getBreeds()
+    }
+}

@@ -37,7 +37,7 @@ final class GalleryViewInteractor: GalleryBusinessLogic, GalleryViewDataStore {
                     self.presenter?.processingImages(response: response)
                 } else if error != nil {
                     self.cursor = 0
-                    let response = GalleryView.GetErrorView.Response(error: .apiError)
+                    let response = GalleryView.GetErrorView.Response(error: .failed)
                     self.presenter?.processingError(response: response)
                 }
             })

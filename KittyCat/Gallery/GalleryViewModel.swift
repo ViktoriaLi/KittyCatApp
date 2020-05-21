@@ -35,7 +35,6 @@ enum GalleryView {
         }
         
         struct ViewModel {
-            let error: String
         }
     }
 }

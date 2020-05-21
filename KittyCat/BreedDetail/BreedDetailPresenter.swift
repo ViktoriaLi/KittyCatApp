@@ -20,8 +20,6 @@ final class BreedDetailViewPresenter: BreedDetailViewPresentationLogic {
     func processingError(response: BreedDetailView.GetErrorView.Response) {
         switch response.error {
             
-        case ApiResponse.noNetwork:
-            let viewModel = BreedDetailView.GetErrorView.ViewModel(error: "Network error")
         case .success:
             break
         default:

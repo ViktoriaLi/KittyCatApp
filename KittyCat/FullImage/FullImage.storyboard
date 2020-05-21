@@ -15,38 +15,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ivb-6l-jko">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="97E-sj-YC1">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="97E-sj-YC1">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="97E-sj-YC1" secondAttribute="bottom" id="ExX-El-dgv"/>
-                                    <constraint firstAttribute="trailing" secondItem="97E-sj-YC1" secondAttribute="trailing" id="I6A-OG-g0W"/>
-                                    <constraint firstItem="97E-sj-YC1" firstAttribute="centerY" secondItem="ivb-6l-jko" secondAttribute="centerY" id="MEB-GI-kr2"/>
-                                    <constraint firstItem="97E-sj-YC1" firstAttribute="leading" secondItem="ivb-6l-jko" secondAttribute="leading" id="RB9-qQ-dOv"/>
-                                    <constraint firstItem="97E-sj-YC1" firstAttribute="top" secondItem="ivb-6l-jko" secondAttribute="top" id="hR7-zP-5Qa"/>
-                                    <constraint firstItem="97E-sj-YC1" firstAttribute="centerX" secondItem="ivb-6l-jko" secondAttribute="centerX" id="sHX-uc-aBl"/>
-                                </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="nev-1w-lTQ"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="HH2-i1-HrN"/>
-                            </scrollView>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="LY3-2R-hhX" firstAttribute="top" secondItem="ivb-6l-jko" secondAttribute="top" id="OFg-h0-Dsj"/>
-                            <constraint firstItem="ivb-6l-jko" firstAttribute="bottom" secondItem="LY3-2R-hhX" secondAttribute="bottom" id="SCM-8H-Oo6"/>
-                            <constraint firstItem="LY3-2R-hhX" firstAttribute="leading" secondItem="ivb-6l-jko" secondAttribute="leading" id="c4d-eF-nEz"/>
-                            <constraint firstItem="ivb-6l-jko" firstAttribute="trailing" secondItem="LY3-2R-hhX" secondAttribute="trailing" id="hwB-EM-spf"/>
+                            <constraint firstItem="LY3-2R-hhX" firstAttribute="bottom" secondItem="97E-sj-YC1" secondAttribute="bottom" id="4QA-Pm-JA1"/>
+                            <constraint firstItem="LY3-2R-hhX" firstAttribute="trailing" secondItem="97E-sj-YC1" secondAttribute="trailing" id="DBV-79-ICy"/>
+                            <constraint firstItem="LY3-2R-hhX" firstAttribute="top" secondItem="97E-sj-YC1" secondAttribute="top" id="IOJ-yV-VvS"/>
+                            <constraint firstItem="97E-sj-YC1" firstAttribute="leading" secondItem="LY3-2R-hhX" secondAttribute="leading" id="wxq-mU-c1e"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LY3-2R-hhX"/>
                     </view>
                     <navigationItem key="navigationItem" id="pPX-BG-GLF"/>
                     <connections>
                         <outlet property="imageView" destination="97E-sj-YC1" id="dpd-sX-daD"/>
-                        <outlet property="scrollView" destination="ivb-6l-jko" id="pce-qR-3Vp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EuI-42-a02" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

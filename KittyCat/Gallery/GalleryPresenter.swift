@@ -19,13 +19,11 @@ final class GalleryViewPresenter: GalleryViewPresentationLogic {
     
     func processingError(response: GalleryView.GetErrorView.Response) {
         switch response.error {
-            
-        case ApiResponse.noNetwork:
-            let viewModel = GalleryView.GetErrorView.ViewModel(error: "Network error")
         case .success:
             break
         default:
-            let viewModel = GalleryView.GetErrorView.ViewModel(error: "Something wrong")
+            let viewModel = GalleryView.GetErrorView.ViewModel()
+            viewController?.showErrorView(viewModel: viewModel)
         }
     }
     

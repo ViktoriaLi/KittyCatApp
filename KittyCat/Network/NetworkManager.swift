@@ -41,6 +41,8 @@ class NetworkManager {
                     print(err)
                     completion(nil, err)
                 }
+            } else {
+                completion(nil, error)
             }
         }
         task.resume()
@@ -64,6 +66,8 @@ class NetworkManager {
                     print(err)
                     completion(nil, err)
                 }
+            } else {
+                completion(nil, error)
             }
         }
         task.resume()
@@ -88,6 +92,8 @@ class NetworkManager {
                     print(error)
                     completion(nil, error)
                 }
+            } else {
+                completion(nil, error)
             }
         }.resume()
     }
@@ -111,6 +117,8 @@ class NetworkManager {
                     print(error)
                     completion(nil, error)
                 }
+            } else {
+                completion(nil, error)
             }
         }.resume()
     }
@@ -127,7 +135,7 @@ class NetworkManager {
                     print("Decodable image info")
                     print(res)
                     if let httpResponse = response as? HTTPURLResponse {
-                         if let paginationCount = httpResponse.allHeaderFields["Pagination-Count"] as? String {
+                         if let paginationCount = httpResponse.allHeaderFields["pagination-count"] as? String {
                             print(paginationCount)
                          }
                     }
@@ -140,6 +148,8 @@ class NetworkManager {
                     print(error)
                     completion(nil, error)
                 }
+            } else {
+                completion(nil, error)
             }
         }.resume()
     }

@@ -26,7 +26,7 @@ final class BreedsListViewInteractor: BreedsListBusinessLogic, BreedsListViewDat
                 let response = BreedsListView.GetBreeds.Response(breeds: allBreeds)
                 self.presenter?.processingBreeds(response: response)
             } else if error != nil {
-                let response = BreedsListView.GetErrorView.Response(error: .apiError)
+                let response = BreedsListView.GetErrorView.Response(error: .failed)
                 self.presenter?.processingError(response: response)
             }
         })

@@ -26,7 +26,6 @@ enum BreedsListView {
     
     enum GetErrorView {
         struct Request {
-            
         }
         
         struct Response {
@@ -34,7 +33,6 @@ enum BreedsListView {
         }
         
         struct ViewModel {
-            let error: String
         }
     }
 }

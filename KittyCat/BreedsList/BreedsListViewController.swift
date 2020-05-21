@@ -8,9 +8,13 @@
 
 import UIKit
 
+protocol ErrorViewDelegate {
+    func tryAgain()
+}
 
 protocol BreedsListViewDisplayLogic: class {
     func fillBreedsList(viewModel: BreedsListView.GetBreeds.ViewModel)
+    func showErrorView(viewModel: BreedsListView.GetErrorView.ViewModel)
 }
 
 class BreedsListViewController: UITableViewController {
@@ -77,7 +81,22 @@ extension BreedsListViewController: BreedsListViewDisplayLogic {
     
     func fillBreedsList(viewModel: BreedsListView.GetBreeds.ViewModel) {
         breeds = viewModel.breeds
+        tableView.separatorStyle = .singleLine
         tableView.reloadData()
     }
 
+    func showErrorView(viewModel: BreedsListView.GetErrorView.ViewModel) {
+        DispatchQueue.main.async {
+            self.tableView.backgroundView = SomethingWrongView(delegate: self, frame: CGRect(x: self.tableView.frame.minX, y: self.tableView.frame.minY, width: self.tableView.frame.width, height: self.tableView.frame.height))
+            self.tableView.separatorStyle = .none
+            self.tableView.reloadData()
+        }
+    }
+}
+
+extension BreedsListViewController: ErrorViewDelegate {
+    
+    func tryAgain() {
+        getBreeds()
+    }
 }

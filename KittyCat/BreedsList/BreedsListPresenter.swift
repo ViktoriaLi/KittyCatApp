@@ -19,13 +19,11 @@ final class BreedsListViewPresenter: BreedsListViewPresentationLogic {
     
     func processingError(response: BreedsListView.GetErrorView.Response) {
         switch response.error {
-            
-        case ApiResponse.noNetwork:
-            let viewModel = BreedsListView.GetErrorView.ViewModel(error: "Network error")
         case .success:
             break
         default:
-            let viewModel = BreedsListView.GetErrorView.ViewModel(error: "Something wrong")
+            let viewModel = BreedsListView.GetErrorView.ViewModel()
+            viewController?.showErrorView(viewModel: viewModel)
         }
     }
     

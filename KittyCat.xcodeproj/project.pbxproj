@@ -41,6 +41,8 @@
 		C1240A4D24725BA700403416 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1240A4C24725BA600403416 /* Question.swift */; };
 		C1240A4F2472621800403416 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1240A4E2472621800403416 /* QuestionView.swift */; };
 		C1240A512472622700403416 /* QuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1240A502472622700403416 /* QuestionView.xib */; };
+		C1240A572475860500403416 /* SomethingWrongView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1240A562475860500403416 /* SomethingWrongView.xib */; };
+		C1240A592475862200403416 /* SomethingWrongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1240A582475862200403416 /* SomethingWrongView.swift */; };
 		C1C47097246FB3CC001B8050 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C47096246FB3CC001B8050 /* AppDelegate.swift */; };
 		C1C47099246FB3CC001B8050 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C47098246FB3CC001B8050 /* SceneDelegate.swift */; };
 		C1C4709B246FB3CC001B8050 /* BreedsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C4709A246FB3CC001B8050 /* BreedsListViewController.swift */; };
@@ -84,6 +86,8 @@
 		C1240A4C24725BA600403416 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		C1240A4E2472621800403416 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		C1240A502472622700403416 /* QuestionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionView.xib; sourceTree = "<group>"; };
+		C1240A562475860500403416 /* SomethingWrongView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SomethingWrongView.xib; sourceTree = "<group>"; };
+		C1240A582475862200403416 /* SomethingWrongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomethingWrongView.swift; sourceTree = "<group>"; };
 		C1C47093246FB3CC001B8050 /* KittyCat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KittyCat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1C47096246FB3CC001B8050 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1C47098246FB3CC001B8050 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,7 +109,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C1240A1D246FBBA800403416 /* Model */ = {
+		C1240A1D246FBBA800403416 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				C1240A1E246FBBB700403416 /* BreedModel.swift */,
@@ -114,7 +118,7 @@
 				C1240A22246FC10800403416 /* ApiResponse.swift */,
 				C1240A4C24725BA600403416 /* Question.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		C1240A24246FC4CC00403416 /* Extensions */ = {
@@ -137,6 +141,43 @@
 			path = FullImage;
 			sourceTree = "<group>";
 		};
+		C1240A52247580E600403416 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				C1240A16246FB7D600403416 /* Main.storyboard */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		C1240A532475810500403416 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C1C47096246FB3CC001B8050 /* AppDelegate.swift */,
+				C1C47098246FB3CC001B8050 /* SceneDelegate.swift */,
+				C1C470A1246FB3D6001B8050 /* Assets.xcassets */,
+				C1C470A3246FB3D6001B8050 /* LaunchScreen.storyboard */,
+				C1C470A6246FB3D6001B8050 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C1240A542475812600403416 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C1240A19246FB7FD00403416 /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		C1240A55247585DC00403416 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C1240A562475860500403416 /* SomethingWrongView.xib */,
+				C1240A582475862200403416 /* SomethingWrongView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		C1C4708A246FB3CB001B8050 = {
 			isa = PBXGroup;
 			children = (
@@ -156,20 +197,17 @@
 		C1C47095246FB3CC001B8050 /* KittyCat */ = {
 			isa = PBXGroup;
 			children = (
-				C1240A3B24701F5B00403416 /* FullImage */,
-				C1240A24246FC4CC00403416 /* Extensions */,
-				C1240A1D246FBBA800403416 /* Model */,
-				C1240A16246FB7D600403416 /* Main.storyboard */,
-				C1C470AF246FB497001B8050 /* BreedDetail */,
-				C1C470AE246FB48D001B8050 /* Gallery */,
-				C1C470AD246FB483001B8050 /* Quiz */,
+				C1240A52247580E600403416 /* TabBar */,
 				C1C470AC246FB47A001B8050 /* BreedsList */,
-				C1C47096246FB3CC001B8050 /* AppDelegate.swift */,
-				C1C47098246FB3CC001B8050 /* SceneDelegate.swift */,
-				C1C470A1246FB3D6001B8050 /* Assets.xcassets */,
-				C1C470A3246FB3D6001B8050 /* LaunchScreen.storyboard */,
-				C1C470A6246FB3D6001B8050 /* Info.plist */,
-				C1240A19246FB7FD00403416 /* NetworkManager.swift */,
+				C1C470AF246FB497001B8050 /* BreedDetail */,
+				C1C470AD246FB483001B8050 /* Quiz */,
+				C1C470AE246FB48D001B8050 /* Gallery */,
+				C1240A3B24701F5B00403416 /* FullImage */,
+				C1240A1D246FBBA800403416 /* Models */,
+				C1240A55247585DC00403416 /* Views */,
+				C1240A542475812600403416 /* Network */,
+				C1240A24246FC4CC00403416 /* Extensions */,
+				C1240A532475810500403416 /* Supporting Files */,
 			);
 			path = KittyCat;
 			sourceTree = "<group>";
@@ -290,6 +328,7 @@
 				C1240A18246FB7D600403416 /* Main.storyboard in Resources */,
 				C1240A512472622700403416 /* QuestionView.xib in Resources */,
 				C1240A0E246FB5DB00403416 /* Quiz.storyboard in Resources */,
+				C1240A572475860500403416 /* SomethingWrongView.xib in Resources */,
 				C1240A0C246FB54100403416 /*  BreedsList.storyboard in Resources */,
 				C1240A28246FCC0600403416 /* BreedDetail.storyboard in Resources */,
 			);
@@ -311,6 +350,7 @@
 				C1240A21246FBC4F00403416 /* ShortBreedModel.swift in Sources */,
 				C1240A4B247051FE00403416 /* QuizViewModel.swift in Sources */,
 				C1C4709B246FB3CC001B8050 /* BreedsListViewController.swift in Sources */,
+				C1240A592475862200403416 /* SomethingWrongView.swift in Sources */,
 				C1240A49247051F100403416 /* QuizPresenter.swift in Sources */,
 				C1240A30247010B300403416 /* BreedDetailViewModel.swift in Sources */,
 				C1240A3A24701B3600403416 /* GalleryViewModel.swift in Sources */,
@@ -478,7 +518,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W3922KQM96;
-				INFOPLIST_FILE = KittyCat/Info.plist;
+				INFOPLIST_FILE = "KittyCat/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -496,7 +536,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W3922KQM96;
-				INFOPLIST_FILE = KittyCat/Info.plist;
+				INFOPLIST_FILE = "KittyCat/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

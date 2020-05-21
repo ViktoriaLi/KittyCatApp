@@ -26,7 +26,7 @@ final class BreedDetailViewInteractor: BreedDetailBusinessLogic, BreedDetailView
                 let response = BreedDetailView.GetImage.Response(imageUrl: breedImage[0].url)
                 self.presenter?.processingImage(response: response)
             } else if error != nil {
-                let response = BreedDetailView.GetErrorView.Response(error: .apiError)
+                let response = BreedDetailView.GetErrorView.Response(error: .failed)
                 self.presenter?.processingError(response: response)
             }
         })

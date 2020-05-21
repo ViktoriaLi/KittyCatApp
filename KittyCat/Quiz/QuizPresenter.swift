@@ -20,13 +20,11 @@ final class QuizViewPresenter: QuizViewPresentationLogic {
     
     func processingError(response: QuizView.GetErrorView.Response) {
         switch response.error {
-            
-        case ApiResponse.noNetwork:
-            let viewModel = QuizView.GetErrorView.ViewModel(error: "Network error")
         case .success:
             break
         default:
             let viewModel = QuizView.GetErrorView.ViewModel(error: "Something wrong")
+            viewController?.showErrorView(viewModel: viewModel)
         }
     }
     

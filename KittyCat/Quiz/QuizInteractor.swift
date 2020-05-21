@@ -27,7 +27,7 @@ final class QuizViewInteractor: QuizBusinessLogic, QuizViewDataStore {
                 let response = QuizView.GetBreeds.Response(breeds: allBreeds)
                 self.presenter?.processingBreeds(response: response)
             } else if error != nil {
-                let response = QuizView.GetErrorView.Response(error: .apiError)
+                let response = QuizView.GetErrorView.Response(error: .failed)
                 self.presenter?.processingError(response: response)
             }
         })
@@ -40,7 +40,7 @@ final class QuizViewInteractor: QuizBusinessLogic, QuizViewDataStore {
                 let response = QuizView.GetImage.Response(imageUrl: breedImage[0].url)
                 self.presenter?.processingImage(response: response)
             } else if error != nil {
-                let response = QuizView.GetErrorView.Response(error: .apiError)
+                let response = QuizView.GetErrorView.Response(error: .failed)
                 self.presenter?.processingError(response: response)
             }
         })

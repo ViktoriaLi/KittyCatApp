@@ -58,11 +58,11 @@
             </objects>
             <point key="canvasLocation" x="2569.5652173913045" y="359.59821428571428"/>
         </scene>
-        <!--Quiz1-->
+        <!--Quiz-->
         <scene sceneID="HU7-jj-EfU">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KHm-JI-mq7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Quiz1" image="second" id="KMN-kP-tW0"/>
+                    <tabBarItem key="tabBarItem" title="Quiz" image="back_cat" id="KMN-kP-tW0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fya-Mi-T4q">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -79,6 +79,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="second" width="30" height="30"/>
+        <image name="back_cat" width="29" height="29"/>
     </resources>
 </document>

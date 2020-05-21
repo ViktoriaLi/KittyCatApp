@@ -29,7 +29,7 @@
                             <outlet property="delegate" destination="g7J-qd-ikS" id="gZx-Dc-JVY"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Breeds" image="first" id="4ed-on-2JN"/>
+                    <tabBarItem key="tabBarItem" title="Breeds" image="cat_face" id="4ed-on-2JN"/>
                     <navigationItem key="navigationItem" title="Breeds" id="p3q-Na-2Yz"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
@@ -57,6 +57,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
+        <image name="cat_face" width="29" height="29"/>
     </resources>
 </document>

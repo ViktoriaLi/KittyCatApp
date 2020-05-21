@@ -10,6 +10,7 @@ import UIKit
 
 protocol GalleryViewDisplayLogic: class {
     func displayImages(viewModel: GalleryView.GetImages.ViewModel)
+    func showErrorView(viewModel: GalleryView.GetErrorView.ViewModel)
 }
 
 class GalleryViewController: UICollectionViewController {
@@ -39,7 +40,10 @@ class GalleryViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.minimumInteritemSpacing = 10
+        collectionView.setCollectionViewLayout(layout, animated: true)
         getImages(ifFirstSearch: true)
     }
     
@@ -61,18 +65,17 @@ extension GalleryViewController {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as? GalleryCollectionViewCell else {
                 return GalleryCollectionViewCell()
             }
+        let image = imagesUrls[indexPath.row]
+        cell.configure(cat: image)
+        return cell
+
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if indexPath.row == imagesUrls.count - 2 {
             getImages(ifFirstSearch: false)
         }
-        //if imagesUrls.count > indexPath.row {
-            let image = imagesUrls[indexPath.row]
-            cell.configure(cat: image)
-            return cell
-        //} else {
-           // return GalleryCollectionViewCell()
-        //}
     }
-    
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
@@ -88,7 +91,8 @@ extension GalleryViewController {
 extension GalleryViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (view.safeAreaLayoutGuide.layoutFrame.width / 2 - 20) , height: 150)
+        let layout = collectionViewLayout as! UICollectionViewFlowLayout
+        return CGSize(width: (collectionView.frame.width / 2 - layout.minimumInteritemSpacing * 2) , height: 150)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -108,7 +112,26 @@ extension GalleryViewController: UICollectionViewDelegateFlowLayout {
 extension GalleryViewController: GalleryViewDisplayLogic {
     
     func displayImages(viewModel: GalleryView.GetImages.ViewModel) {
+        let lastIndex = imagesUrls.count
         imagesUrls += viewModel.imageUrls
-        collectionView.reloadData()
+        let indexes = (lastIndex)...(imagesUrls.count - 1)
+        let indexPathArray = indexes.map{IndexPath(row: $0, section: 0)}
+        self.collectionView.insertItems(at: indexPathArray)
+    }
+    
+    func showErrorView(viewModel: GalleryView.GetErrorView.ViewModel) {
+        imagesUrls = []
+        DispatchQueue.main.async {
+            self.collectionView.backgroundView = SomethingWrongView(delegate: self, frame: CGRect(x: self.collectionView.frame.minX, y: self.collectionView.frame.minY, width: self.collectionView.frame.width, height: self.collectionView.frame.height))
+            self.collectionView.reloadData()
+        }
+    }
+}
+
+extension GalleryViewController: ErrorViewDelegate {
+    
+    func tryAgain() {
+        imagesUrls = []
+        getImages(ifFirstSearch: true)
     }
 }

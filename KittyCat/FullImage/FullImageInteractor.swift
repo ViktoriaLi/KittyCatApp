@@ -26,7 +26,7 @@ final class FullImageViewInteractor: FullImageBusinessLogic, FullImageViewDataSt
                 let response = FullImageView.GetImage.Response(url: breedImage.url)
                 self.presenter?.processingImage(response: response)
             } else if error != nil {
-                let response = FullImageView.GetErrorView.Response(error: .apiError)
+                let response = FullImageView.GetErrorView.Response(error: .failed)
                 self.presenter?.processingError(response: response)
             }
         })

@@ -19,9 +19,7 @@ final class FullImageViewPresenter: FullImageViewPresentationLogic {
     
     func processingError(response: FullImageView.GetErrorView.Response) {
         switch response.error {
-            
-        case ApiResponse.noNetwork:
-            let viewModel = FullImageView.GetErrorView.ViewModel(error: "Network error")
+
         case .success:
             break
         default:

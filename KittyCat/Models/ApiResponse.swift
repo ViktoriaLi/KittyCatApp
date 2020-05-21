@@ -10,7 +10,5 @@ import Foundation
 
 enum ApiResponse: String {
     case success
-    case apiError
     case failed
-    case noNetwork
 }
