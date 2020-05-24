@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ApiResponse: String {
+public enum ApiResponse: Error {
     case success
     case failed
 }

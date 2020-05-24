@@ -40,7 +40,6 @@ enum QuizView {
     }
     enum GetErrorView {
         struct Request {
-            
         }
         
         struct Response {
@@ -48,7 +47,6 @@ enum QuizView {
         }
         
         struct ViewModel {
-            let error: String
         }
     }
 }

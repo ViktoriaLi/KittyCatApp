@@ -12,22 +12,20 @@ protocol BreedsListBusinessLogic {
     func getBreeds(request: BreedsListView.GetBreeds.Request)
 }
 
-protocol BreedsListViewDataStore {}
-
-final class BreedsListViewInteractor: BreedsListBusinessLogic, BreedsListViewDataStore {
+final class BreedsListViewInteractor: BreedsListBusinessLogic {
     
     var presenter: BreedsListViewPresentationLogic?
     private var networkManager = NetworkManager()
     
     func getBreeds(request: BreedsListView.GetBreeds.Request) {
-        
-        networkManager.getBreedsWithInfo(completion: { (breeds, error) in
-            if let allBreeds = breeds {
-                let response = BreedsListView.GetBreeds.Response(breeds: allBreeds)
-                self.presenter?.processingBreeds(response: response)
-            } else if error != nil {
+        networkManager.getData(target: .getBreeds, completion: { (result: Result<[BreedModel], ApiResponse>) in
+            switch result {
+            case .failure:
                 let response = BreedsListView.GetErrorView.Response(error: .failed)
                 self.presenter?.processingError(response: response)
+            case .success(let breeds):
+                let response = BreedsListView.GetBreeds.Response(breeds: breeds)
+                self.presenter?.processingBreeds(response: response)
             }
         })
     }

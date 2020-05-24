@@ -12,24 +12,11 @@ protocol FullImageBusinessLogic {
     func getImage(request: FullImageView.GetImage.Request)
 }
 
-protocol FullImageViewDataStore {}
-
-final class FullImageViewInteractor: FullImageBusinessLogic, FullImageViewDataStore {
+final class FullImageViewInteractor: FullImageBusinessLogic {
     
-    var presenter: FullImageViewPresentationLogic?
+    var presenter: FullImageViewPresentationLogiс?
     private var networkManager = NetworkManager()
     
     func getImage(request: FullImageView.GetImage.Request) {
-        
-        networkManager.getFullImageById(imageId: request.id, completion: { (image, error) in
-            if let breedImage = image {
-                let response = FullImageView.GetImage.Response(url: breedImage.url)
-                self.presenter?.processingImage(response: response)
-            } else if error != nil {
-                let response = FullImageView.GetErrorView.Response(error: .failed)
-                self.presenter?.processingError(response: response)
-            }
-        })
     }
-    
 }

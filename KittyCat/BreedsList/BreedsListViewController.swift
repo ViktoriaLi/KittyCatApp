@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol ErrorViewDelegate {
-    func tryAgain()
-}
-
 protocol BreedsListViewDisplayLogic: class {
     func fillBreedsList(viewModel: BreedsListView.GetBreeds.ViewModel)
     func showErrorView(viewModel: BreedsListView.GetErrorView.ViewModel)

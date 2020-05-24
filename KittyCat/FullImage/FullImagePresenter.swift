@@ -8,29 +8,19 @@
 
 import Foundation
 
-protocol  FullImageViewPresentationLogic {
+protocol FullImageViewPresentationLogiс {
     func processingError(response: FullImageView.GetErrorView.Response)
     func processingImage(response: FullImageView.GetImage.Response)
 }
 
-final class FullImageViewPresenter: FullImageViewPresentationLogic {
+final class FullImageViewPresenter: FullImageViewPresentationLogiс {
     
     weak var viewController: FullImageViewDisplayLogic?
     
     func processingError(response: FullImageView.GetErrorView.Response) {
-        switch response.error {
-
-        case .success:
-            break
-        default:
-            let viewModel = FullImageView.GetErrorView.ViewModel(error: "Something wrong")
-        }
     }
     
     func processingImage(response: FullImageView.GetImage.Response) {
-
-        let viewModel = FullImageView.GetImage.ViewModel(url: response.url)
-        viewController?.displayImage(viewModel: viewModel)
     }
     
 }

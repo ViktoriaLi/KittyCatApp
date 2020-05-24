@@ -27,7 +27,6 @@ enum  FullImageView {
     
     enum GetErrorView {
         struct Request {
-            
         }
         
         struct Response {

@@ -13,7 +13,6 @@ struct BreedModel: Codable, Identifiable, Hashable {
     var id: String
     var name: String
     var temperament: String
-    //var wikipediaUrl: String
     var origin: String
     var description: String?
     var hypoallergenic: Int?
@@ -22,7 +21,6 @@ struct BreedModel: Codable, Identifiable, Hashable {
         case id = "id"
         case name = "name"
         case temperament = "temperament"
-        //case wikipediaUrl = "wikipedia_url"
         case origin = "origin"
         case description = "description"
         case hypoallergenic = "hypoallergenic"

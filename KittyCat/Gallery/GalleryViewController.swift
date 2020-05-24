@@ -16,7 +16,6 @@ protocol GalleryViewDisplayLogic: class {
 class GalleryViewController: UICollectionViewController {
 
     var imagesUrls = [ShortImageModel]()
-    
     var interactor: GalleryBusinessLogic?
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -47,12 +46,10 @@ class GalleryViewController: UICollectionViewController {
         getImages(ifFirstSearch: true)
     }
     
-    
     func getImages(ifFirstSearch: Bool) {
         let request = GalleryView.GetImages.Request(ifFirstSearch: ifFirstSearch)
         interactor?.getImages(request: request)
     }
-    
 }
 
 extension GalleryViewController {
@@ -102,7 +99,6 @@ extension GalleryViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 10.0
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 10.0

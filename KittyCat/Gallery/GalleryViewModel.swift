@@ -27,7 +27,6 @@ enum GalleryView {
     
     enum GetErrorView {
         struct Request {
-            
         }
         
         struct Response {

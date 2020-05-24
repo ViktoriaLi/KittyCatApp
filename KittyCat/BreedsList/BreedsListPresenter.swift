@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol BreedsListViewPresentationLogic {
+protocol BreedsListViewPresentationLogic: class {
     func processingError(response: BreedsListView.GetErrorView.Response)
     func processingBreeds(response: BreedsListView.GetBreeds.Response)
 }

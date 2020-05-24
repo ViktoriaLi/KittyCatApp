@@ -12,16 +12,15 @@ extension UIImageView {
 
     func loadImage(from url: String?) {
         if let sourceURL = url {
-            if let cacheImage = imageCache.object(forKey: sourceURL as AnyObject) as? UIImage {
+            if let cacheImage = imageCache.object(forKey: sourceURL as NSString) {
                 self.image = cacheImage
                 return
             }
-            
             let queue = DispatchQueue.global(qos: .utility)
             if let urlFromString = URL(string: sourceURL) {
                 queue.async { [weak self] in
                     if let data = try? Data(contentsOf: urlFromString), let image = UIImage(data: data) {
-                        imageCache.setObject(image, forKey: sourceURL as AnyObject)
+                        imageCache.setObject(image, forKey: sourceURL as NSString)
                         DispatchQueue.main.async {
                             self?.image = image
                         }
@@ -30,5 +29,4 @@ extension UIImageView {
             }
         }
     }
-    
 }

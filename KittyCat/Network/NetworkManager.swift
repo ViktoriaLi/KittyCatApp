@@ -8,9 +8,28 @@
 
 import UIKit
 
-var imageCache = NSCache<AnyObject, AnyObject>()
+enum Endpoint {
+    case getBreeds
+    case getImages(limit: Int, cursor: Int)
+    case getImageById(id: String)
+    
+    var parameters: String {
+        switch self {
+        case .getBreeds:
+            return "breeds"
+        case .getImages(let limit, let cursor):
+            return "images/search?limit=\(limit)&page=\(cursor)&order=DESC"
+        case .getImageById(let id):
+            return "images/search?breed_ids=\(id)&limit=1"
+        }
+    }
+}
+
+var imageCache = NSCache<NSString, UIImage>()
 
 class NetworkManager {
+    
+    private let urlBase = "https://api.thecatapi.com/v1/"
     
     private func createRequest(endpoint: String) -> URLRequest {
         let url = URL(string: endpoint)
@@ -22,136 +41,27 @@ class NetworkManager {
         return request
     }
     
-    func getBreedsWithInfo(completion: @escaping ([BreedModel]?, Error?) -> Void) {
+    func getData<T: Decodable>(target: Endpoint, completion: @escaping (Result<[T], ApiResponse>) -> Void) {
         
-        let urlBase = "https://api.thecatapi.com/v1/breeds"
-        let request = createRequest(endpoint: urlBase)
+        let url = urlBase + target.parameters
+        let request = createRequest(endpoint: url)
         
-        let task = URLSession.shared.dataTask(with: request) {data, response, error in
-            if let allData = data {
-                do {
-                    let res = try JSONDecoder().decode(Array<BreedModel>.self, from: allData)
-                    print("Decodable cats info")
-                    DispatchQueue.main.async {
-                        print(res)
-                        completion(res, nil)
-                    }
+        let task = URLSession.shared.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
+            guard let data = data else {
+                completion(.failure(.failed))
+                return
+            }
+            do {
+                let res = try JSONDecoder().decode(Array<T>.self, from: data)
+                DispatchQueue.main.async {
+                    completion(.success(res))
                 }
-                catch (let err) {
-                    print(err)
-                    completion(nil, err)
-                }
-            } else {
-                completion(nil, error)
+            }
+            catch {
+                completion(.failure(.failed))
             }
         }
         task.resume()
-    }
-    
-    func getShortBreeds(completion: @escaping ([ShortBreedModel]?, Error?) -> Void) {
-        let urlBase = "https://api.thecatapi.com/v1/breeds"
-        let request = createRequest(endpoint: urlBase)
-        
-        let task = URLSession.shared.dataTask(with: request) {data, response, error in
-            if let allData = data {
-                do {
-                    let res = try JSONDecoder().decode(Array<ShortBreedModel>.self, from: allData)
-                    print("Decodable cats info")
-                    DispatchQueue.main.async {
-                        print(res)
-                        completion(res, nil)
-                    }
-                }
-                catch (let err) {
-                    print(err)
-                    completion(nil, err)
-                }
-            } else {
-                completion(nil, error)
-            }
-        }
-        task.resume()
-    }
-    
-    func getBreedImageById(breedId: String, completion: @escaping ([ShortImageModel]?, Error?) -> Void) {
-        
-        let urlBase = "https://api.thecatapi.com/v1/images/search?breed_ids=\(breedId)&limit=1"
-        let request = createRequest(endpoint: urlBase)
-        
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            if let allData = data {
-                do {
-                    let res = try JSONDecoder().decode(Array<ShortImageModel>.self, from: allData)
-                    print("Decodable image info")
-                    DispatchQueue.main.async {
-                        print(res)
-                        completion(res, nil)
-                    }
-                }
-                catch {
-                    print(error)
-                    completion(nil, error)
-                }
-            } else {
-                completion(nil, error)
-            }
-        }.resume()
-    }
-    
-    func getFullImageById(imageId: String, completion: @escaping (ShortImageModel?, Error?) -> Void) {
-        
-        let urlBase = "https://api.thecatapi.com/v1/images/"
-        let request = createRequest(endpoint: urlBase)
-        
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            if let allData = data {
-                do {
-                    let res = try JSONDecoder().decode(ShortImageModel.self, from: allData)
-                    print("Decodable image info")
-                    DispatchQueue.main.async {
-                        print(res)
-                        completion(res, nil)
-                    }
-                }
-                catch {
-                    print(error)
-                    completion(nil, error)
-                }
-            } else {
-                completion(nil, error)
-            }
-        }.resume()
-    }
-    
-    func getImages(limit: Int, cursor: Int, completion: @escaping ([ShortImageModel]?, Error?) -> Void) {
-        
-        let urlBase = "https://api.thecatapi.com/v1/images/search?limit=\(limit)&page=\(cursor)&order=DESC"
-        let request = createRequest(endpoint: urlBase)
-        
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            if let allData = data {
-                do {
-                    let res = try JSONDecoder().decode(Array<ShortImageModel>.self, from: allData)
-                    print("Decodable image info")
-                    print(res)
-                    if let httpResponse = response as? HTTPURLResponse {
-                         if let paginationCount = httpResponse.allHeaderFields["pagination-count"] as? String {
-                            print(paginationCount)
-                         }
-                    }
-                    DispatchQueue.main.async {
-                        print(res)
-                        completion(res, nil)
-                    }
-                }
-                catch {
-                    print(error)
-                    completion(nil, error)
-                }
-            } else {
-                completion(nil, error)
-            }
-        }.resume()
     }
 }
 

@@ -23,7 +23,7 @@ final class QuizViewPresenter: QuizViewPresentationLogic {
         case .success:
             break
         default:
-            let viewModel = QuizView.GetErrorView.ViewModel(error: "Something wrong")
+            let viewModel = QuizView.GetErrorView.ViewModel()
             viewController?.showErrorView(viewModel: viewModel)
         }
     }

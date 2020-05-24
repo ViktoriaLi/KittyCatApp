@@ -18,7 +18,6 @@
 		C1240A1A246FB7FD00403416 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1240A19246FB7FD00403416 /* NetworkManager.swift */; };
 		C1240A1C246FBB8E00403416 /* ShortImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1240A1B246FBB8E00403416 /* ShortImageModel.swift */; };
 		C1240A1F246FBBB700403416 /* BreedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1240A1E246FBBB700403416 /* BreedModel.swift */; };
-		C1240A21246FBC4F00403416 /* ShortBreedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1240A20246FBC4F00403416 /* ShortBreedModel.swift */; };
 		C1240A23246FC10800403416 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1240A22246FC10800403416 /* ApiResponse.swift */; };
 		C1240A26246FC7AD00403416 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1240A25246FC7AD00403416 /* UIImageView.swift */; };
 		C1240A28246FCC0600403416 /* BreedDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1240A27246FCC0600403416 /* BreedDetail.storyboard */; };
@@ -49,6 +48,7 @@
 		C1C4709D246FB3CC001B8050 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C4709C246FB3CC001B8050 /* QuizViewController.swift */; };
 		C1C470A2246FB3D6001B8050 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1C470A1246FB3D6001B8050 /* Assets.xcassets */; };
 		C1C470A5246FB3D6001B8050 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1C470A3246FB3D6001B8050 /* LaunchScreen.storyboard */; };
+		C1FB307D247A5319002703D9 /* ErrorViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FB307C247A5319002703D9 /* ErrorViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,7 +63,6 @@
 		C1240A19246FB7FD00403416 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		C1240A1B246FBB8E00403416 /* ShortImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortImageModel.swift; sourceTree = "<group>"; };
 		C1240A1E246FBBB700403416 /* BreedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedModel.swift; sourceTree = "<group>"; };
-		C1240A20246FBC4F00403416 /* ShortBreedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortBreedModel.swift; sourceTree = "<group>"; };
 		C1240A22246FC10800403416 /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
 		C1240A25246FC7AD00403416 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		C1240A27246FCC0600403416 /* BreedDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BreedDetail.storyboard; sourceTree = "<group>"; };
@@ -96,6 +95,7 @@
 		C1C470A1246FB3D6001B8050 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1C470A4246FB3D6001B8050 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C1C470A6246FB3D6001B8050 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1FB307C247A5319002703D9 /* ErrorViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +114,6 @@
 			children = (
 				C1240A1E246FBBB700403416 /* BreedModel.swift */,
 				C1240A1B246FBB8E00403416 /* ShortImageModel.swift */,
-				C1240A20246FBC4F00403416 /* ShortBreedModel.swift */,
 				C1240A22246FC10800403416 /* ApiResponse.swift */,
 				C1240A4C24725BA600403416 /* Question.swift */,
 			);
@@ -206,6 +205,7 @@
 				C1240A1D246FBBA800403416 /* Models */,
 				C1240A55247585DC00403416 /* Views */,
 				C1240A542475812600403416 /* Network */,
+				C1FB307B247A52E4002703D9 /* Protocol */,
 				C1240A24246FC4CC00403416 /* Extensions */,
 				C1240A532475810500403416 /* Supporting Files */,
 			);
@@ -261,6 +261,14 @@
 				C1240A27246FCC0600403416 /* BreedDetail.storyboard */,
 			);
 			path = BreedDetail;
+			sourceTree = "<group>";
+		};
+		C1FB307B247A52E4002703D9 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				C1FB307C247A5319002703D9 /* ErrorViewDelegate.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,7 +355,6 @@
 				C1240A4F2472621800403416 /* QuestionView.swift in Sources */,
 				C1240A26246FC7AD00403416 /* UIImageView.swift in Sources */,
 				C1240A1F246FBBB700403416 /* BreedModel.swift in Sources */,
-				C1240A21246FBC4F00403416 /* ShortBreedModel.swift in Sources */,
 				C1240A4B247051FE00403416 /* QuizViewModel.swift in Sources */,
 				C1C4709B246FB3CC001B8050 /* BreedsListViewController.swift in Sources */,
 				C1240A592475862200403416 /* SomethingWrongView.swift in Sources */,
@@ -360,6 +367,7 @@
 				C1240A23246FC10800403416 /* ApiResponse.swift in Sources */,
 				C1240A4D24725BA700403416 /* Question.swift in Sources */,
 				C1C47097246FB3CC001B8050 /* AppDelegate.swift in Sources */,
+				C1FB307D247A5319002703D9 /* ErrorViewDelegate.swift in Sources */,
 				C1240A06246FB4E800403416 /* BreedsListInteractor.swift in Sources */,
 				C1240A41247027CE00403416 /* FullImageInteractor.swift in Sources */,
 				C1240A0A246FB50700403416 /* BreedsListViewModel.swift in Sources */,

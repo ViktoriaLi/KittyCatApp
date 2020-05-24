@@ -14,7 +14,7 @@ class SomethingWrongView: UIView {
     @IBOutlet weak var tryAgainButton: UIButton!
     @IBOutlet var contentView: UIView!
     
-    var delegate: ErrorViewDelegate?
+    weak var delegate: ErrorViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -32,5 +32,4 @@ final class GalleryViewPresenter: GalleryViewPresentationLogic {
         let viewModel = GalleryView.GetImages.ViewModel(imageUrls: response.imageUrls)
         viewController?.displayImages(viewModel: viewModel)
     }
-    
 }

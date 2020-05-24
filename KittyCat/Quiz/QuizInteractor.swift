@@ -13,37 +13,36 @@ protocol QuizBusinessLogic {
     func getImageUrl(request: QuizView.GetImage.Request)
 }
 
-protocol QuizViewDataStore {}
-
-final class QuizViewInteractor: QuizBusinessLogic, QuizViewDataStore {
+final class QuizViewInteractor: QuizBusinessLogic {
     
     var presenter: QuizViewPresentationLogic?
     private var networkManager = NetworkManager()
     
     func getBreeds(request: QuizView.GetBreeds.Request) {
         
-        networkManager.getBreedsWithInfo(completion: { (breeds, error) in
-            if let allBreeds = breeds {
-                let response = QuizView.GetBreeds.Response(breeds: allBreeds)
-                self.presenter?.processingBreeds(response: response)
-            } else if error != nil {
+        networkManager.getData(target: .getBreeds, completion: { (result: Result<[BreedModel], ApiResponse>) in
+            switch result {
+            case .failure:
                 let response = QuizView.GetErrorView.Response(error: .failed)
                 self.presenter?.processingError(response: response)
+            case .success(let breeds):
+                let response = QuizView.GetBreeds.Response(breeds: breeds)
+                self.presenter?.processingBreeds(response: response)
             }
         })
     }
     
     func getImageUrl(request: QuizView.GetImage.Request) {
         
-        networkManager.getBreedImageById(breedId: request.breedId, completion: { (image, error) in
-            if let breedImage = image, breedImage.count > 0 {
-                let response = QuizView.GetImage.Response(imageUrl: breedImage[0].url)
-                self.presenter?.processingImage(response: response)
-            } else if error != nil {
+        networkManager.getData(target: .getImageById(id: request.breedId), completion: { (result: Result<[ShortImageModel], ApiResponse>) in
+            switch result {
+            case .failure:
                 let response = QuizView.GetErrorView.Response(error: .failed)
                 self.presenter?.processingError(response: response)
+            case .success(let breedImage):
+                let response = QuizView.GetImage.Response(imageUrl: breedImage[0].url)
+                self.presenter?.processingImage(response: response)
             }
         })
     }
-    
 }

@@ -10,10 +10,11 @@ import UIKit
 
 protocol BreedDetailViewDisplayLogic: class {
     func displayImage(viewModel: BreedDetailView.GetImage.ViewModel)
+    func displayDefaultImage(viewModel: BreedDetailView.GetErrorView.ViewModel)
 }
 
 class BreedDetailViewController: UIViewController {
-
+    
     @IBOutlet weak var catImageView: UIImageView!
     @IBOutlet weak var temperamentLabel: UILabel!
     @IBOutlet weak var originLabel: UILabel!
@@ -64,12 +65,15 @@ class BreedDetailViewController: UIViewController {
         let request = BreedDetailView.GetImage.Request(breedId: breedId)
         interactor?.getImageUrl(request: request)
     }
-
 }
 
 extension BreedDetailViewController: BreedDetailViewDisplayLogic {
     
     func displayImage(viewModel: BreedDetailView.GetImage.ViewModel) {
         catImageView.loadImage(from: viewModel.imageUrl)
+    }
+    
+    func displayDefaultImage(viewModel: BreedDetailView.GetErrorView.ViewModel) {
+        catImageView.image = UIImage(named: "if_no_image")
     }
 }

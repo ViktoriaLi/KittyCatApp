@@ -13,7 +13,4 @@ struct Question {
     var breedName: String
     var options: [String]
     var correctAnswer: Int
-    //var option2: String
-    //var option3: String
-    //var option4: String
 }

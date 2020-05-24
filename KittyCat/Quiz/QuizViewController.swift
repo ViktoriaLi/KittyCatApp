@@ -27,7 +27,6 @@ class QuizViewController: UIViewController {
     
     var currentQuestion = 0
     var correctness = 0
-    
     var questions = [Question]()
     
     var interactor: QuizBusinessLogic?

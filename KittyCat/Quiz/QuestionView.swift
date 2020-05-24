@@ -11,12 +11,10 @@ import UIKit
 class QuestionView: UIView {
     
     @IBOutlet weak var imageView: UIImageView!
-    
     @IBOutlet weak var option1Button: UIButton!
     @IBOutlet weak var option2Button: UIButton!
     @IBOutlet weak var option3Button: UIButton!
     @IBOutlet weak var option4Button: UIButton!
-    
     @IBOutlet var contentView: UIView!
     
     var question: Question? = nil
@@ -44,6 +42,12 @@ class QuestionView: UIView {
     private func loadFromNib() {
         Bundle.main.loadNibNamed("QuestionView", owner: self, options: nil)
         addSubview(contentView)
+        setUiElements()
+        contentView.frame = self.bounds
+        contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    }
+    
+    private func setUiElements() {
         option1Button.layer.cornerRadius = 8
         option2Button.layer.cornerRadius = 8
         option3Button.layer.cornerRadius = 8
@@ -54,31 +58,27 @@ class QuestionView: UIView {
         option3Button.setTitle(question?.options[2], for: .normal)
         option4Button.setTitle(question?.options[3], for: .normal)
         imageView.loadImage(from: photo)
-        contentView.frame = self.bounds
-        contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
     
     @IBAction func optionButtonTapped(_ sender: UIButton) {
         print(sender.tag)
         if let currentQuestion = question {
             if sender.tag == currentQuestion.correctAnswer {
-                UIView.animate(withDuration: 0.5) {
-                    sender.layer.backgroundColor =  UIColor.green.cgColor
-                }
-                UIView.animate(withDuration: 0.5) {
-                    sender.layer.backgroundColor =  UIColor.white.cgColor
-                }
+                changeButtonColor(color: #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1), button: sender)
                 delegate?.displayNextQuestion(ifCorrect: true)
             } else {
-                UIView.animate(withDuration: 0.5) {
-                    sender.layer.backgroundColor =  UIColor.red.cgColor
-                }
-                UIView.animate(withDuration: 0.5) {
-                    sender.layer.backgroundColor =  UIColor.white.cgColor
-                }
+                changeButtonColor(color: #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1), button: sender)
                 delegate?.displayNextQuestion(ifCorrect: false)
             }
         }
-        
+    }
+    
+    private func changeButtonColor(color: CGColor, button: UIButton) {
+        UIView.animate(withDuration: 0.5) {
+            button.layer.backgroundColor = color
+        }
+        UIView.animate(withDuration: 0.5) {
+            button.layer.backgroundColor = UIColor.white.cgColor
+        }
     }
 }

@@ -23,7 +23,8 @@ final class BreedDetailViewPresenter: BreedDetailViewPresentationLogic {
         case .success:
             break
         default:
-            let viewModel = BreedDetailView.GetErrorView.ViewModel(error: "Something wrong")
+            let viewModel = BreedDetailView.GetErrorView.ViewModel()
+            viewController?.displayDefaultImage(viewModel: viewModel)
         }
     }
     
