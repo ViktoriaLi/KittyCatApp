@@ -16,7 +16,7 @@ extension UIImageView {
                 self.image = cacheImage
                 return
             }
-            let queue = DispatchQueue.global(qos: .utility)
+            let queue = DispatchQueue.global(qos: .userInitiated)
             if let urlFromString = URL(string: sourceURL) {
                 queue.async { [weak self] in
                     if let data = try? Data(contentsOf: urlFromString), let image = UIImage(data: data) {

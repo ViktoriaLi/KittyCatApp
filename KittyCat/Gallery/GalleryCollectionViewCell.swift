@@ -12,6 +12,11 @@ class GalleryCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var catImageView: UIImageView!
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        catImageView.image = nil
+    }
+    
     func configure(cat: ShortImageModel) {
         self.catImageView.clipsToBounds = true
         self.catImageView.layer.cornerRadius = 8
