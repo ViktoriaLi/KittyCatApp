@@ -1,7 +1,5 @@
 # KittyCatApp
 
-Test task for application to MacPaw Internship 2020
-
 This app developed without third-party libraries and contains such functionality: 
 
 1. List of breeds with detail info in separate screen
