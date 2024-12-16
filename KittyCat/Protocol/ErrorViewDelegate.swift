@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol ErrorViewDelegate: class {
+protocol ErrorViewDelegate: AnyObject {
     func tryAgain()
 }

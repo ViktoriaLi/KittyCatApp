@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol GalleryViewDisplayLogic: class {
+protocol GalleryViewDisplayLogic: AnyObject {
     func displayImages(viewModel: GalleryView.GetImages.ViewModel)
     func showErrorView(viewModel: GalleryView.GetErrorView.ViewModel)
 }

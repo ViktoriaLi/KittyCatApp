@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol BreedDetailViewDisplayLogic: class {
+protocol BreedDetailViewDisplayLogic: AnyObject {
     func displayImage(viewModel: BreedDetailView.GetImage.ViewModel)
     func displayDefaultImage(viewModel: BreedDetailView.GetErrorView.ViewModel)
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol FullImageViewDisplayLogic: class {
+protocol FullImageViewDisplayLogic: AnyObject {
     func displayImage(viewModel: FullImageView.GetImage.ViewModel)
 }
 

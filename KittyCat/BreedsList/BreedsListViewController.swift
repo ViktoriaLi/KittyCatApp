@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol BreedsListViewDisplayLogic: class {
+protocol BreedsListViewDisplayLogic: AnyObject {
     func fillBreedsList(viewModel: BreedsListView.GetBreeds.ViewModel)
     func showErrorView(viewModel: BreedsListView.GetErrorView.ViewModel)
 }

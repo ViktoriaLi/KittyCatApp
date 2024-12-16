@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol QuizViewDisplayLogic: class {
+protocol QuizViewDisplayLogic: AnyObject {
     func fillQuestions(viewModel: QuizView.GetBreeds.ViewModel)
     func displayImage(viewModel: QuizView.GetImage.ViewModel)
     func showErrorView(viewModel: QuizView.GetErrorView.ViewModel)
