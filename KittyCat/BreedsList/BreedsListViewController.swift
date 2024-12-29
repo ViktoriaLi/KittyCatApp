@@ -13,7 +13,7 @@ protocol BreedsListViewDisplayLogic: AnyObject {
     func showErrorView(viewModel: BreedsListView.GetErrorView.ViewModel)
 }
 
-class BreedsListViewController: UITableViewController {
+final class BreedsListViewController: UITableViewController {
 
     var breeds = [BreedModel]()
     var interactor: BreedsListBusinessLogic?
